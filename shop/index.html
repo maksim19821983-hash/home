@@ -60,18 +60,30 @@
                 <input class="header__search-input" type="search" placeholder="Искать товары..." aria-label="Поиск товаров" title="найти товар">
         </div>
         <div class="header__actions">
-            <button 
-            class="header__actions-cart"
-            title="корзина"
-            aria-label="корзина">
-                <svg width="24" height="24">
-                <use
-                class="header__actions-cart-icon"
-                href="./icons/sprite.svg#cart">
-            </use>
-            </svg>
-        </button>
-            <button
+
+		<div class="cart-wrapper">
+		<button class="header__actions-cart" id="cart-btn" type="button" title="Корзина" aria-label="Корзина">
+			<span id="cart-count">0</span>
+			<svg width="24" height="24">
+			<use class="header__actions-cart-icon" href="./icons/sprite.svg#cart"></use>
+			</svg>
+		</button>
+
+		<div id="cart-dropdown" class="cart-dropdown">
+			<div class="cart-header">
+			<h3>Корзина</h3>
+			<button id="close-cart" type="button">✕</button>
+			</div>
+			
+			<ul id="cart-items"></ul>
+			
+			<div class="cart-total">
+			Итого: <span id="cart-total">0</span> ₽
+			</div>
+			<button class="checkout-btn" type="button">Оформить</button>
+		</div>
+		</div>
+        <button
             class="header__actions-user"
             title="профиль"
             aria-label="профиль">
@@ -200,6 +212,13 @@
                     </div>
                     <p class="article__cost">&#8381;5000</p>
                 </div>
+				<button class="add-to-cart" 
+				data-id="1" 
+				data-name="Футболка с лентой" 
+				data-price="5000" 
+				data-img="./images/new-1.jpg">
+       	В корзину
+	</button>
             </article>
                 </a>
             <a href="#" class="clothes__link">
@@ -215,6 +234,13 @@
                     </div>
                     <p class="article__cost">&#8381;5000</p>
                 </div>
+				<button class="add-to-cart" 
+              data-id="2" 
+              data-name="Узкие джинсы" 
+              data-price="5000" 
+              data-img="./images/new-2.jpg">
+        В корзину
+      </button>
             </article>
             </a>    
             <a href="#" class="clothes__link clothes__link--3">
@@ -230,6 +256,13 @@
                     </div>
                     <p class="article__cost">&#8381;7000</p>
                 </div>
+				<button class="add-to-cart" 
+              data-id="3" 
+              data-name="Клетчатая рубашка" 
+              data-price="7000" 
+              data-img="./images/new-3.jpg">
+        В корзину
+      </button>
             </article>
             </a>    
             <a href="#" class="clothes__link clothes__link--4">
@@ -245,12 +278,108 @@
                     </div>
                     <p class="article__cost">&#8381;6000</p>
                 </div>
+				<button class="add-to-cart" 
+              data-id="4" 
+              data-name="Футболка с полосами" 
+              data-price="6000" 
+              data-img="./images/new-4.jpg">
+        В корзину
+      </button>
             </article>
             </a>    
-            
+            </div>
+			<div class="clothes__container container more--clothes ">
+                <a href="" class="clothes__link">
+                <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/new-1.jpg" alt="Футболка с лентой" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Футболка с лентой</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-1.svg" alt="Оценка">
+                        <p>4.5/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;5000</p>
+                </div>
+				<button class="add-to-cart" 
+				data-id="1" 
+				data-name="Футболка с лентой" 
+				data-price="5000" 
+				data-img="./images/new-1.jpg">
+       	В корзину
+	</button>
+            </article>
+                </a>
+            <a href="#" class="clothes__link">
+                <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/new-2.jpg" alt="Узкие джинсы" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Узкие джинсы</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-2.svg" alt="Оценка">
+                        <p>3.5/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;5000</p>
+                </div>
+				<button class="add-to-cart" 
+              data-id="2" 
+              data-name="Узкие джинсы" 
+              data-price="5000" 
+              data-img="./images/new-2.jpg">
+        В корзину
+      </button>
+            </article>
+            </a>    
+            <a href="#" class="clothes__link clothes__link--3">
+                <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/new-3.jpg" alt="Клетчатая рубашка" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Клетчатая рубашка</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-1.svg" alt="Оценка">
+                        <p>4.5/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;7000</p>
+                </div>
+				<button class="add-to-cart" 
+              data-id="3" 
+              data-name="Клетчатая рубашка" 
+              data-price="7000" 
+              data-img="./images/new-3.jpg">
+        В корзину
+      </button>
+            </article>
+            </a>    
+            <a href="#" class="clothes__link clothes__link--4">
+                <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/new-4.jpg" alt="Футболка с полосами" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Футболка с полосами</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-1.svg" alt="Оценка">
+                        <p>4.5/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;6000</p>
+                </div>
+				<button class="add-to-cart" 
+              data-id="4" 
+              data-name="Футболка с полосами" 
+              data-price="6000" 
+              data-img="./images/new-4.jpg">
+        В корзину
+      </button>
+            </article>
+            </a>    
             </div>
             <button class="article__button">
-                <p class="article__button-text">Посмотреть всё</p>
+                <p class="article__button-text">Посмотреть ещё</p>
             </button>
             
         </section>
@@ -271,6 +400,13 @@
                     </div>
                     <p class="article__cost">&#8381;5000</p>
                 </div>
+				<button class="add-to-cart" 
+              data-id="5" 
+              data-name="Рубашка в полоску" 
+              data-price="5000" 
+              data-img="./images/lider-1.jpg">
+        В корзину
+      </button>
             </article>
                 </a> 
                 <a href="#" class="clothes__link">
@@ -286,6 +422,13 @@
                     </div>
                     <p class="article__cost">&#8381;5000</p>
                 </div>
+				<button class="add-to-cart" 
+              data-id="6" 
+              data-name="Футболка «Courage»" 
+              data-price="5000" 
+              data-img="./images/lider-2.jpg">
+        В корзину
+      </button>
             </article>
                 </a> 
                 <a href="#" class="clothes__link clothes__link--3">
@@ -301,6 +444,13 @@
                     </div>
                     <p class="article__cost">&#8381;4000</p>
                 </div>
+					<button class="add-to-cart" 
+              data-id="7" 
+              data-name="Свободные бермуды" 
+              data-price="4000" 
+              data-img="./images/lider-3.jpg">
+        В корзину
+      </button>
             </article>
                 </a> 
                 <a href="#" class="clothes__link clothes__link--4">
@@ -316,11 +466,110 @@
                     </div>
                     <p class="article__cost">&#8381;7000</p>
                 </div>
+					<button class="add-to-cart" 
+              data-id="8" 
+              data-name="Потертые узкие джинсы" 
+              data-price="7000" 
+              data-img="./images/lider-4.jpg">
+        В корзину
+      </button>
             </article>
                 </a> 
             </div>
+            <div class="clothes__container container more--clothes">
+
+                <a href="#" class="clothes__link">
+                    <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/lider-1.jpg" alt="Рубашка в полоску" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Рубашка в полоску</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/lider-1.svg" alt="Оценка">
+                        <p>5.0/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;5000</p>
+                </div>
+				<button class="add-to-cart" 
+              data-id="5" 
+              data-name="Рубашка в полоску" 
+              data-price="5000" 
+              data-img="./images/lider-1.jpg">
+        В корзину
+      </button>
+            </article>
+                </a> 
+                <a href="#" class="clothes__link">
+                    <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/lider-2.jpg" alt="Футболка «Courage»" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Футболка «Courage»</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-2.svg" alt="Оценка">
+                        <p>4.0/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;5000</p>
+                </div>
+				<button class="add-to-cart" 
+              data-id="6" 
+              data-name="Футболка «Courage»" 
+              data-price="5000" 
+              data-img="./images/lider-2.jpg">
+        В корзину
+      </button>
+            </article>
+                </a> 
+                <a href="#" class="clothes__link clothes__link--3">
+                    <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/lider-3.jpg" alt="Свободные бермуды" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Свободные бермуды</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/lider-3.svg" alt="Оценка">
+                        <p>3.0/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;4000</p>
+                </div>
+					<button class="add-to-cart" 
+              data-id="7" 
+              data-name="Свободные бермуды" 
+              data-price="4000" 
+              data-img="./images/lider-3.jpg">
+        В корзину
+      </button>
+            </article>
+                </a> 
+                <a href="#" class="clothes__link clothes__link--4">
+                    <article class="article__container">
+                <div class="article__wrapper">
+                    <img src="./images/lider-4.jpg" alt="Потертые узкие джинсы" class="article__img">
+                </div>
+                <div class="article__about">
+                    <p class="article__text">Потертые узкие джинсы</p>
+                    <div class="article__about-stars">
+                        <img src="./icons/new-1.svg" alt="Оценка">
+                        <p>4.0/<span class="article__about-stars--total">5</span></p>
+                    </div>
+                    <p class="article__cost">&#8381;7000</p>
+                </div>
+					<button class="add-to-cart" 
+              data-id="8" 
+              data-name="Потертые узкие джинсы" 
+              data-price="7000" 
+              data-img="./images/lider-4.jpg">
+        В корзину
+      </button>
+            </article>
+                </a> 
+            </div>
+
             <button class="article__button">
-                <p class="article__button-text">Посмотреть всё</p>
+                <p class="article__button-text">Посмотреть ещё</p>
             </button>
         </section>
         <section class="styles">
@@ -565,37 +814,37 @@
 						<div class="footer__column footer__column--company">
 							<h3 class="footer__heading">Компания</h3>
 							<ul class="footer__list">
-								<li><a href="#">О нас</a></li>
-								<li><a href="#">Функции</a></li>
-								<li><a href="#">Работы</a></li>
-								<li><a href="#">Карьера</a></li>
+								<li class="footer__list-item"><a href="#">О нас</a></li>
+								<li class="footer__list-item"><a href="#">Функции</a></li>
+								<li class="footer__list-item"><a href="#">Работы</a></li>
+								<li class="footer__list-item"><a href="#">Карьера</a></li>
 							</ul>
 						</div>
 						<div class="footer__column footer__column--help">
 							<h3 class="footer__heading">Помощь</h3>
 							<ul class="footer__list">
-								<li><a href="#">Поддержка</a></li>
-								<li><a href="#">Доставка</a></li>
-								<li><a href="#">Условия</a></li>
-								<li><a href="#">Политика</a></li>
+								<li class="footer__list-item"><a href="#">Поддержка</a></li>
+								<li class="footer__list-item"><a href="#">Доставка</a></li>
+								<li class="footer__list-item"><a href="#">Условия</a></li>
+								<li class="footer__list-item"><a href="#">Политика</a></li>
 							</ul>
 						</div>
 						<div class="footer__column footer__column--faq">
 							<h3 class="footer__heading">Вопросы</h3>
 							<ul class="footer__list">
-								<li><a href="#">Аккаунт</a></li>
-								<li><a href="#">О доставке</a></li>
-								<li><a href="#">Заказы</a></li>
-								<li><a href="#">Платежи</a></li>
+								<li class="footer__list-item"><a href="#">Аккаунт</a></li>
+								<li class="footer__list-item"><a href="#">О доставке</a></li>
+								<li class="footer__list-item"><a href="#">Заказы</a></li>
+								<li class="footer__list-item"><a href="#">Платежи</a></li>
 							</ul>
 						</div>
 						<div class="footer__column footer__column--resources">
 							<h3 class="footer__heading">Ресурсы</h3>
 							<ul class="footer__list">
-								<li><a href="#">Бесплатные книги</a></li>
-								<li><a href="#">Уроки</a></li>
-								<li><a href="#">Блог</a></li>
-								<li><a href="#">Плейлист на YouTube</a></li>
+								<li class="footer__list-item"><a href="#">Бесплатные книги</a></li>
+								<li class="footer__list-item"><a href="#">Уроки</a></li>
+								<li class="footer__list-item"><a href="#">Блог</a></li>
+								<li class="footer__list-item"><a href="#">Плейлист на YouTube</a></li>
 							</ul>
 						</div>
 					</nav>
@@ -644,5 +893,6 @@
 				</div>
 			</div>
 		</footer>
+
 </body>
 </html>

@@ -1,10 +1,14 @@
-export function closeBanner() {
-  const banner = document.getElementById('discountBanner');
-  const closeButton = banner?.querySelector('.close-btn');
 
+
+
+const banner = document.getElementById('discountBanner');
+  const closeButton = banner?.querySelector('.close-btn');
+export function closeBanner() {
   if (closeButton) {
     closeButton.addEventListener('click', () => {
-      banner.style.display = 'none';
+      banner.classList.add("discount--close");
     });
   }
 }
+
+

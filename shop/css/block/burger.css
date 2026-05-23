@@ -16,10 +16,13 @@
 @media (width <= 822px) {
     .header__burger {
         margin-right: 16px;
+        z-index: 1002;
+
     }
     .header__burger-icon,
     .burger--open .header__burger-close {
         display: block;
+        
     }
 
     .header__burger-close,

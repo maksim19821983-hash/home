@@ -30,6 +30,13 @@
     font-size: clamp(30px, 18.00px + 1.56vw, 48px);
     color: var(--main-color);
 }
+
+.article__container {
+    transition: all 0.3s;
+}
+.article__container:hover {
+    transform: translateY(-5px);
+}
 .article__img {
     position: absolute;
     top: 50%;
@@ -88,6 +95,13 @@
     transition: 0.3s;
 }
 
+.article__button--close {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+}
+
 .article__button-text {
     display: flex;
     justify-content: center;
@@ -110,6 +124,21 @@
     margin-bottom: 95px;
 }
 
+.add-to-cart {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #333;
+}
 
 @media (width <=768px) {
     .clothes__link--3, .clothes__link--4 {

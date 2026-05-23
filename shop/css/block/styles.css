@@ -23,6 +23,21 @@
 	-webkit-column-gap: 20px;
 	-moz-column-gap: 20px;
 	column-gap: 20px;
+	transition: all 0.3s;
+}
+
+.style-card--casual,
+.style-card--formal,
+.style-card--evening,
+.style-card--sport {
+	transition: all 0.3s;
+}
+
+.style-card--casual:hover,
+.style-card--formal:hover,
+.style-card--evening:hover,
+.style-card--sport:hover {
+	transform: translateY(-5px);
 }
 
 .styles__row--top {

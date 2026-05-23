@@ -43,6 +43,13 @@
 	gap: 118px;
 }
 
+.footer__list-item {
+	transition: all 0.3s;
+}
+
+.footer__list-item:hover {
+	transform: translateY(-5px);
+}
 .footer__column {
 	max-height: 177px;
 }

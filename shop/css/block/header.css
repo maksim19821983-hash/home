@@ -23,13 +23,27 @@
 
 .header__logo {
     width: clamp(126px, 149.33px + 2.95vw, 160px);
+    transition: all 0.3s;
 }
 
+
+.header__logo:hover {
+    transform: translateY(-5px);
+}
+
+
+.header__list-item {
+    transition: all 0.3s;
+}
 
 .header__list-link {
     font-weight: 400;
     font-size: 16px;
     color: #000;
+}
+
+.header__list-item:hover {
+    transform: translateY(-5px);
 }
 
 @media (width <= 822px) {
@@ -111,4 +125,17 @@
     align-items: center;
     gap: 15px;
 
+}
+
+.header__actions-cart,
+.header__actions-user {
+    transition: all 0.3s;
+}
+.header__actions-cart:hover,
+.header__actions-user:hover {
+    transform: translateY(-5px);
+}
+
+.header__logo-hidde {
+    display: none;
 }
