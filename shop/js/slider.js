@@ -54,14 +54,11 @@ function setActiveSlide() {
 		s.classList.remove("is-active");
 		s.classList.remove("is-edge");
 	});
-
-	// mark all visible slides (3) as active
 	for (let i = 0; i < visibleSlides; i++) {
 		const slide = slides[index + i];
 		if (slide) slide.classList.add("is-active");
 	}
 
-	// mark only the two edge slides (just outside the viewport)
 	const leftEdge = slides[index - 1];
 	const rightEdge = slides[index + visibleSlides];
 	if (leftEdge) leftEdge.classList.add("is-edge");
@@ -118,3 +115,54 @@ track.addEventListener("transitionend", () => {
 		setActiveSlide();
 	}
 });
+
+
+let touchStartX = 0;
+let touchEndX = 0;
+let isDragging = false;
+let dragStartIndex = 0;
+
+track.addEventListener("touchstart", (e) => {
+	touchStartX = e.changedTouches[0].screenX;
+	isDragging = true;
+	dragStartIndex = index;
+
+	track.style.transition = "none";
+}, { passive: true });
+
+track.addEventListener("touchmove", (e) => {
+	if (!isDragging) return;
+	touchEndX = e.changedTouches[0].screenX;
+	
+}, { passive: true });
+
+track.addEventListener("touchend", (e) => {
+	if (!isDragging) return;
+	
+	touchEndX = e.changedTouches[0].screenX;
+	const diff = touchStartX - touchEndX; // 
+	const threshold = 50; // 
+	if (diff > threshold) {
+		index++;
+		track.style.transition = "transform 0.4s ease";
+		setPosition();
+		setActiveSlide();
+	}
+	else if (diff < -threshold) {
+		index--;
+		track.style.transition = "transform 0.4s ease";
+		setPosition();
+		setActiveSlide();
+	}
+	else {
+		track.style.transition = "transform 0.4s ease";
+		setPosition();
+	}
+	
+	isDragging = false;
+}, { passive: true });
+
+track.addEventListener("touchmove", (e) => {
+	if (isDragging) {
+	}
+}, { passive: false });

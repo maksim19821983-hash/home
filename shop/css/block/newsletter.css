@@ -35,7 +35,6 @@
 }
 
 .newsletter__input {
-        width: 100%;
         outline: none;
         border: none;
         border-radius: 62px;
@@ -46,9 +45,17 @@
 .newsletter__button {
     margin-top: 14px;
     background-color: var(--bg-color-second);
-    width: 349px;
     height: 46px;
     border-radius: 62px;
+}
+
+@media (width > 768px)  {
+    .newsletter__input {
+        width: 100%;
+    }
+    .newsletter__button {
+        width: 100%;
+    }
 }
 .newsletter__button-text {
     color: var(--main-color);
@@ -66,6 +73,17 @@
     font-size: 30px;
     line-height: 117%;
     }
-
+    .newsletter__form {
+        text-align: center;
+    }
+    .newsletter__button {
+        width: 300px;
+    }
+    .newsletter__input {
+        width: 300px;
+    }
+    .newsletter__icon {
+        margin-left: 23px;
+    }
 
 }
